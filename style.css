@@ -10,7 +10,7 @@
 }
 
 /* Styling for the .FormBoxes container that wraps the form elements */
-.ContentBoxes {
+.ContentBoxes{
   background: linear-gradient(to bottom right, #EDE6D2, #B47C4B); /* Gradient from light bone white to brass */
   padding: 20px; /* Padding inside the form for space around content */
   border-radius: 10px; /* Rounded corners for the form container */
