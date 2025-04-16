@@ -98,6 +98,10 @@ h1, h2, h3, h4{
   text-transform: uppercase; /* Make text uppercase for added emphasis */
   color: white; /* White text to contrast against the red background */
 }
+.DownloadLink {
+  text-decoration: none; /* Removes underline from the link */
+}
+
 .DownloadButtons {
   padding: 10px 20px;
   background-color: #007bff;
@@ -108,14 +112,13 @@ h1, h2, h3, h4{
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  text-decoration: none;
 }
 
 .DownloadButtons:hover {
-  background-color: #0056b3;
+  background-color: #870029;
 }
 
 .DownloadButtons:focus {
   outline: none;
-  box-shadow: 0 0 5px #0056b3;
+  box-shadow: 0 0 5px #bb0038;
 }
