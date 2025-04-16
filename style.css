@@ -1,0 +1,100 @@
+/* Styling for input and textarea elements inside forms with the .FormBoxes class */
+.FormBoxes input,
+.FormBoxes textarea {
+  padding: 10px; /* Add padding for text spacing */
+  border: 1px solid #9E1B32; /* Red border for consistency with the theme */
+  border-radius: 5px; /* Rounded corners for the input fields */
+  width: 100%; /* Ensure inputs take up full width */
+  margin-bottom: 10px; /* Add spacing between inputs */
+  font-family: 'Exo 2', sans-serif; /* Use modern font 'Exo 2' for a clean, readable look */
+}
+
+/* Styling for the .FormBoxes container that wraps the form elements */
+.ContentBoxes {
+  background: linear-gradient(to bottom right, #EDE6D2, #B47C4B); /* Gradient from light bone white to brass */
+  padding: 20px; /* Padding inside the form for space around content */
+  border-radius: 10px; /* Rounded corners for the form container */
+  border: 2px solid #9E1B32; /* Deep red border to match the theme */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for a soft 3D effect */
+  max-width: 500px; /* Restrict form width to ensure it doesn't stretch too far */
+  margin: 0 auto; /* Center the form horizontally on the page */
+}
+.ContentBoxes li{
+  align-content: left;
+  padding: 5px 0 5px 0;
+  margin: 5px 0 5px 2px;
+}
+
+/* Class for general text elements (headers and content) that need special styling */
+.AccessText {
+  font-size: 19px; /* Set font size for better readability */
+  text-align: center; /* Center text alignment */
+  color: white; /* White text to contrast against the red background */
+}
+
+/* Container for the tab buttons used for navigation */
+.TabButtons {
+  display: flex; /* Use flexbox to align buttons horizontally */
+  justify-content: space-evenly; /* Distribute buttons evenly across the container */
+  align-items: stretch; /* Ensure buttons stretch to equal height */
+  flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines if needed */
+  gap: 2px; /* Small space between buttons */
+  background-color: lightgray; /* Light gray background for the tab buttons */
+  padding: 10px; /* Padding around the buttons */
+}
+/*Style the Menu Tab*/
+.TabButtons a {
+  flex: 1 1 100px; /* Same behavior as .TabButtons button */
+  display: flex; /* Makes sure the text inside behaves nicely */
+  justify-content: center; /* Center the text horizontally */
+  align-items: center;     /* Center the text vertically */
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #B47C4B;
+  border: 2px solid #9E1B32;
+  color: white;
+  text-decoration: none;
+  font-family: 'Trajan Pro', serif;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  min-width: 100px; /* Prevents them from shrinking too small */
+}
+
+
+.TabButtons a:hover {
+  background-color: #F2A900;
+  color: black;
+}
+
+/* Styling for the buttons inside the TabButtons container */
+.TabButtons button {
+  flex: 1 1 100px; /* Allow buttons to grow or shrink with a minimum width of 100px */
+  border: solid 2px #9E1B32; /* Red border for the buttons */
+  background-color: #B47C4B; /* Brass-colored button background */
+  padding: 5px 5px; /* Padding inside the button */
+  font-size: 16px; /* Set font size for the button text */
+  cursor: pointer; /* Show pointer cursor on hover to indicate it's clickable */
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+}
+
+/* Hover effect for the TabButtons button */
+.TabsButtons:hover {
+  background-color: #F2A900; /* Bright yellow on hover for contrast */
+}
+
+/* Body styling for the overall webpage */
+body {
+  background-color: #9E1B32; /* Deep red background for the entire page */
+  font-size: 19px; /* Set base font size */
+  text-align: center; /* Center the text on the page */
+  color: rgb(0, 0, 0); /* White text for readability on red background */
+  font-family: 'Exo 2', sans-serif; /* Modern 'Exo 2' font for main body text */
+}
+
+/* Universal styling for h1, h2, h3, h4*/
+h1, h2, h3, h4{
+  font-family: 'Trajan Pro', serif; /* Use Gothic-style 'Trajan Pro' for headers and buttons */
+  letter-spacing: 1px; /* Add spacing between letters for a more dramatic effect */
+  text-transform: uppercase; /* Make text uppercase for added emphasis */
+  color: white; /* White text to contrast against the red background */
+}
