@@ -14,30 +14,22 @@ document.getElementById("Omnisiah").addEventListener("dblclick", function () {
       console.log("Button reset.");
   }
 });
-
-let seconds = 0; // Initialize the counter
-let timerInterval; // Declare timerInterval globally so we can clear it later
-
-function startTimer() {
-  // Set an interval to increase seconds every 1000 milliseconds (1 second)
-  timerInterval = setInterval(function () {
-      seconds++; // Increase the second count by 1
-      console.log(seconds + " seconds have passed.");
-
-      // After 10 seconds, reset the button's content and style
-      if (seconds >= 10) {
-          resetButton();
-          clearInterval(timerInterval); // Stop the timer
-          console.log("Timer stopped.");
-      }
-  }, 1000); // Execute the function every 1 second (1000 milliseconds)
+function growImage() {
+  const image = document.getElementById("CollageImages");
+  image.style.transition = "transform 0.3s ease";
+  image.style.transform = "scale(1.5)";
 }
+// Make only one image expand at a time
+document.querySelectorAll(".CollageImages img").forEach(function(img) {
+  img.addEventListener("click", function () {
+    const expanded = document.querySelector(".CollageImages img.expanded");
 
-function resetButton() {
-  const button = document.getElementById("Omnisiah");
-  button.innerText = "Praise the Emperor."; // Reset text
-  button.style.color = ""; // Reset color
-  button.style.textShadow = ""; // Reset text shadow
-  seconds = 0; // Reset the counter
-  console.log("Button reset.");
-}
+    // If there's an already expanded image and it's not the one clicked, shrink it
+    if (expanded && expanded !== this) {
+      expanded.classList.remove("expanded");
+    }
+
+    // Toggle the clicked image
+    this.classList.toggle("expanded");
+  });
+});
