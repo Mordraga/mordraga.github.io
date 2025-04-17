@@ -1,105 +1,116 @@
-/* Styling for input and textarea elements inside forms with the .FormBoxes class */
-.FormBoxes input,
-.FormBoxes textarea {
-  padding: 10px; /* Add padding for text spacing */
-  border: 1px solid #9E1B32; /* Red border for consistency with the theme */
-  border-radius: 5px; /* Rounded corners for the input fields */
-  width: 100%; /* Ensure inputs take up full width */
-  margin-bottom: 10px; /* Add spacing between inputs */
-  font-family: 'Exo 2', sans-serif; /* Use modern font 'Exo 2' for a clean, readable look */
+/* Color Definitions */
+:root {
+  --tech-red: #dc143c;
+  --mech-gray: #2e2e2e;
+  --glow-gold: #ffd700;
+  --purity-white: #f5f5f5;
+  --bone: #EDE6D2;
+  --copper: #B47C4B;
+  --bone-to-copper: linear-gradient(to bottom right, #EDE6D2, #B47C4B);
+  --brass-metal: #b5a642;
+  --holy-blue: #4f8cff;
+  --data-green: #00ff9f;
+  --oil-black: #0f0f0f;
+  --warning-orange: #ff6600;
+  --font-family-main: 'Exo 2', sans-serif;  /* Standard font for body text */
+  --font-family-header: 'Trajan Pro', serif;  /* Font for headers */
+  --content-padding: 20px;  /* Standard padding for content boxes */
+  --border-radius: 10px;   /* Rounded corners standard */
+  --border-width: 2px;     /* Border width for all content boxes */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Standard box shadow */
+}
+/*General Tool*/
+.strikethrough {
+  text-decoration: line-through;
 }
 
-/* Styling for the .FormBoxes container that wraps the form elements */
-.ContentBoxes{
-  background: linear-gradient(to bottom right, #EDE6D2, #B47C4B); /* Gradient from light bone white to brass */
-  padding: 20px; /* Padding inside the form for space around content */
-  border-radius: 10px; /* Rounded corners for the form container */
-  border: 2px solid #9E1B32; /* Deep red border to match the theme */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for a soft 3D effect */
-  max-width: 500px; /* Restrict form width to ensure it doesn't stretch too far */
-  margin: 0 auto; /* Center the form horizontally on the page */
+/* Standard Content Box Styling */
+.ContentBoxes {
+  background: var(--bone-to-copper);
+  padding: var(--content-padding);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--glow-gold);
+  box-shadow: var(--box-shadow);
+  max-width: 500px;
+  margin: 0 auto;
 }
-.ContentBoxes li{
+
+/* Specific Adjustments for Content Elements within Content Boxes */
+.ContentBoxes li,
+.ContentBoxes div {
+  padding: 5px 0;
+  margin: 5px 0;
+}
+
+.ContentBoxes li {
   align-content: left;
-  padding: 5px 0 5px 0;
-  margin: 5px 0 5px 2px;
 }
 
-/* Class for general text elements (headers and content) that need special styling */
+.ContentBoxes div {
+  align-content: center;
+}
+
+/* General Text Elements (headings and content) */
 .AccessText {
-  font-size: 19px; /* Set font size for better readability */
-  text-align: center; /* Center text alignment */
-  color: white; /* White text to contrast against the red background */
+  font-size: 19px;
+  text-align: center;
+  color: var(--purity-white);
+  font-family: var(--font-family-main);
 }
 
-/* Container for the tab buttons used for navigation */
+/* Buttons and Navigation */
 .TabButtons {
-  display: flex; /* Use flexbox to align buttons horizontally */
-  justify-content: space-evenly; /* Distribute buttons evenly across the container */
-  align-items: stretch; /* Ensure buttons stretch to equal height */
-  flex-wrap: wrap; /* Allow buttons to wrap onto multiple lines if needed */
-  gap: 2px; /* Small space between buttons */
-  background-color: lightgray; /* Light gray background for the tab buttons */
-  padding: 10px; /* Padding around the buttons */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2px;
+  background-color: var(--purity-white);
+  padding: 10px;
 }
-/*Style the Menu Tab*/
-.TabButtons a {
-  flex: 1 1 100px; /* Same behavior as .TabButtons button */
-  display: flex; /* Makes sure the text inside behaves nicely */
-  justify-content: center; /* Center the text horizontally */
-  align-items: center;     /* Center the text vertically */
+
+.TabButtons a,
+.TabButtons button {
+  flex: 1 1 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 20px;
   margin: 5px;
-  background-color: #B47C4B;
-  border: 2px solid #9E1B32;
+  background-color: var(--copper);
+  border: var(--border-width) solid #9E1B32;
   color: white;
-  text-decoration: none;
-  font-family: 'Trajan Pro', serif;
+  font-family: var(--font-family-header);
   text-transform: uppercase;
   transition: background-color 0.3s ease;
-  min-width: 100px; /* Prevents them from shrinking too small */
 }
 
-
-.TabButtons a:hover {
+.TabButtons a:hover,
+.TabButtons button:hover {
   background-color: #F2A900;
   color: black;
 }
 
-/* Styling for the buttons inside the TabButtons container */
-.TabButtons button {
-  flex: 1 1 100px; /* Allow buttons to grow or shrink with a minimum width of 100px */
-  border: solid 2px #9E1B32; /* Red border for the buttons */
-  background-color: #B47C4B; /* Brass-colored button background */
-  padding: 5px 5px; /* Padding inside the button */
-  font-size: 16px; /* Set font size for the button text */
-  cursor: pointer; /* Show pointer cursor on hover to indicate it's clickable */
-  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
-}
-
-/* Hover effect for the TabButtons button */
-.TabsButtons:hover {
-  background-color: #F2A900; /* Bright yellow on hover for contrast */
-}
-
-/* Body styling for the overall webpage */
+/* Body Styling */
 body {
-  background-color: #9E1B32; /* Deep red background for the entire page */
-  font-size: 19px; /* Set base font size */
-  text-align: center; /* Center the text on the page */
-  color: rgb(0, 0, 0); /* White text for readability on red background */
-  font-family: 'Exo 2', sans-serif; /* Modern 'Exo 2' font for main body text */
+  background-color: var(--tech-red);
+  font-size: 19px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: var(--font-family-main);
 }
 
-/* Universal styling for h1, h2, h3, h4*/
-h1, h2, h3, h4{
-  font-family: 'Trajan Pro', serif; /* Use Gothic-style 'Trajan Pro' for headers and buttons */
-  letter-spacing: 1px; /* Add spacing between letters for a more dramatic effect */
-  text-transform: uppercase; /* Make text uppercase for added emphasis */
-  color: white; /* White text to contrast against the red background */
+/* Universal Styling for h1, h2, h3, h4 */
+h1, h2, h3, h4 {
+  font-family: var(--font-family-header);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
 }
+
+/* Styling for Buttons (Download and Other Actions) */
 .DownloadLink {
-  text-decoration: none; /* Removes underline from the link */
+  text-decoration: none;
 }
 
 .DownloadButtons {
@@ -111,7 +122,6 @@ h1, h2, h3, h4{
   font-size: 16px;
   cursor: pointer;
   text-align: center;
-  display: inline-block;
 }
 
 .DownloadButtons:hover {
@@ -123,6 +133,7 @@ h1, h2, h3, h4{
   box-shadow: 0 0 5px #bb0038;
 }
 
+/* Collage Image Gallery Styling */
 .CollageImages {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -140,3 +151,17 @@ h1, h2, h3, h4{
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+#Omnisiah {
+  font-weight: bold;
+  color: #fff; /* White text for contrast */
+  text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5), /* Gold glow (slightly blurred) */
+               -1px -1px 2px rgba(255, 215, 0, 0.5),
+               1px -1px 2px rgba(255, 215, 0, 0.5),
+               -1px 1px 2px rgba(255, 215, 0, 0.5); /* Subtle 4-direction glow */
+}
+#Omnisiah:hover {
+  cursor: pointer;
+  transform: scale(1.1); /* Makes it grow a bit when hovered */
+}
+
