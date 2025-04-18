@@ -107,6 +107,8 @@ body {
   text-align: center;
   color: rgb(0, 0, 0);
   font-family: var(--font-family-main);
+  transition: background-color 0.5s ease;
+  
 }
 
 /* Universal Styling for h1, h2, h3, h4 */
@@ -167,12 +169,9 @@ h1, h2, h3, h4 {
 
 #Omnisiah {
   font-weight: bold;
-  color: #fff; /* White text for contrast */
-  text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5), /* Gold glow (slightly blurred) */
-               -1px -1px 2px rgba(255, 215, 0, 0.5),
-               1px -1px 2px rgba(255, 215, 0, 0.5),
-               -1px 1px 2px rgba(255, 215, 0, 0.5); /* Subtle 4-direction glow */
-  -webkit-touch-callout: none; /* iOS Safari */
+  color: var(--oil-black);
+  text-shadow: "0 0 10px orange";
+ -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Old versions of Firefox */
@@ -184,11 +183,8 @@ h1, h2, h3, h4 {
 #Omnisiah:hover {
   cursor: pointer;
   transform: scale(1.1); /* Makes it grow a bit when hovered */
+  transition: scale(1.1) ease;
 }
-.CollageImages img.expanded {
-  transform: scale(1.8);
-  z-index: 10;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 12px 4px rgba(255, 215, 0, 0.7); /* optional glow effect */
+#timerDisplay {
+  color:(--tech-red); /*Hide Timer*/
 }
-

@@ -1,35 +1,87 @@
-// script.js
-document.getElementById("Omnisiah").addEventListener("dblclick", function () {
-  // Toggle between "Praise the Emperor" and "Praise the Omnisiah"
-  if (this.innerText === "Praise the Emperor.") {
-      this.innerText = "⚙️ Praise the Omnisiah ⚙️";
-      this.style.color = "#ffa500";
-      this.style.textShadow = "0 0 10px orange";
-      startTimer(); // Start the timer when clicked
+let techPriestessMode = true;
+
+document.getElementById("Omnisiah").addEventListener("click", function () {
+  if (techPriestessMode) {
+     // Swap to Tech-Priest mode
+     this.innerText = "⚙️ Praise the Omnisiah ⚙️";
+     this.style.color = "#0f0f0f";
+     this.style.textShadow = "0 0 10px orange";
+     document.body.style.backgroundColor = "#960e29"; // Mechanicus vibe
   } else {
-      this.innerText = "Praise the Emperor.";
-      this.style.color = ""; // Reset color
-      this.style.textShadow = ""; // Reset text shadow
-      seconds = 0; // Reset the counter
-      console.log("Button reset.");
+   // Swap to Iron Hands mode
+   this.innerText = "Praise the Emperor.";
+   this.style.color = "silver";
+   this.style.textShadow = "0 0 8px black";
+   document.body.style.backgroundColor = "#1a1a1a"; // Iron Hands vibe
+ // Flip the mode toggle at the end
+  }
+  techPriestessMode = !techPriestessMode;
+});
+
+let clickCounter = 0;
+let timer;
+let elapsedTime = 0; // Variable to track elapsed time
+let actualTime = 0; //Debug Real Time
+let clicked = false; // Variable to track if button has been clicked
+
+
+document.getElementById("uselessButton").addEventListener("click", function () {
+  let button = this;
+
+  // Toggle 'clicked' state
+  if (!clicked && elapsedTime <= 10) {
+    clicked = true;
+  } else {
+    clicked = false;
+  }
+
+  clickCounter += 1;
+
+  // Start or restart timer
+  if (clickCounter === 1 || clicked === true) {
+    startTimer(); 
+  }
+
+  // Handle button messages based on click count
+  if (clickCounter === 1) {
+    button.innerText = "What did you think would happen?";
+  } else if (clickCounter === 5) {
+    button.innerText = "You're still clicking?";
+  } else if (clickCounter === 10) {
+    button.innerText = "Okay, now you're just being stubborn.";
+  } else if (clickCounter === 15) {
+    button.innerText = "Seriously. There's nothing here.";
+  } else if (clickCounter === 20) {
+    button.innerText = "Fine. You win.";
+  } else if (clickCounter === 25) {
+    button.innerText = "Or do you?";
+  } else if (clickCounter >= 30 && clickCounter < 100) {
+    button.innerText = `Clicks: ${clickCounter}`;
+  } else if (clickCounter === 100 && clickCounter < 150) {
+    button.innerText = "Seriously?!";
+  } else if (clickCounter === 200) {
+    button.innerText = "Have you tried praising the Omnisiah yet?";
+  } else if (clickCounter === 150) {
+    button.innerText = "...";
   }
 });
-function growImage() {
-  const image = document.getElementById("CollageImages");
-  image.style.transition = "transform 0.3s ease";
-  image.style.transform = "scale(1.5)";
-}
-// Make only one image expand at a time
-document.querySelectorAll(".CollageImages img").forEach(function(img) {
-  img.addEventListener("click", function () {
-    const expanded = document.querySelector(".CollageImages img.expanded");
 
-    // If there's an already expanded image and it's not the one clicked, shrink it
-    if (expanded && expanded !== this) {
-      expanded.classList.remove("expanded");
+function startTimer() {
+  // Clear any existing timer
+  if (timer) clearInterval(timer);
+
+  elapsedTime = 0;
+
+  timer = setInterval(() => {
+    elapsedTime += 1;
+    actualTime += 1;
+    console.log(`Elapsed: ${elapsedTime}, Actual: ${actualTime}`);
+
+    if (elapsedTime >= 10 || !clicked) {
+      clickCounter = 0;
+      document.getElementById("uselessButton").innerText = "Click Me.";
+      clearInterval(timer);
+      clicked = false;
     }
-
-    // Toggle the clicked image
-    this.classList.toggle("expanded");
-  });
-});
+  }, 1000);
+}
