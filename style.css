@@ -41,7 +41,7 @@
   border: var(--border-width) solid var(--glow-gold);
   box-shadow: var(--box-shadow);
   max-width: 500px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 /* Specific Adjustments for Content Elements within Content Boxes */
@@ -117,6 +117,9 @@ h1, h2, h3, h4 {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: white;
+  background-color: var(--tech-red);
+  border-radius: 10px;
+  border: 2px solid var(--oil-black);
 }
 
 /* Styling for Buttons (Download and Other Actions) */
@@ -166,6 +169,11 @@ h1, h2, h3, h4 {
   width: 150%;
   max-height: 500px;
 }
+.Content{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 #Omnisiah {
   font-weight: bold;
@@ -187,4 +195,12 @@ h1, h2, h3, h4 {
 }
 #timerDisplay {
   color:(--tech-red); /*Hide Timer*/
+}
+
+#UselessButton {
+  font-size: 1.2rem; /* Slightly larger font for better readability */
+  padding: 0.8rem 1.5rem; /* Comfortable padding for touch */
+  width: auto; /* Adjust width based on content */
+  min-width: 150px; /* Minimum width for consistency */
+  border-radius: 5px; /* Rounded edges for aesthetics */
 }
