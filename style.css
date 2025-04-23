@@ -12,23 +12,24 @@
   --data-green: #00ff9f;
   --oil-black: #0f0f0f;
   --warning-orange: #ff6600;
-  --font-family-main: 'Exo 2', sans-serif;  /* Standard font for body text */
-  --font-family-header: 'Trajan Pro', serif;  /* Font for headers */
-  --content-padding: 20px;  /* Standard padding for content boxes */
-  --border-radius: 10px;   /* Rounded corners standard */
-  --border-width: 2px;     /* Border width for all content boxes */
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Standard box shadow */
+  --font-family-main: 'Exo 2', sans-serif;
+  --font-family-header: 'Trajan Pro', serif;
+  --content-padding: 20px;
+  --border-radius: 10px;
+  --border-width: 2px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-/*General Tool*/
+
+/* General Tool */
 .strikethrough {
   text-decoration: line-through;
 }
@@ -58,12 +59,13 @@
 .ContentBoxes div {
   align-content: center;
 }
-.ContentBoxes img{
+
+.ContentBoxes img {
   width: 10%;
   height: auto;
 }
 
-/* General Text Elements (headings and content) */
+/* General Text Elements */
 .AccessText {
   font-size: 19px;
   text-align: center;
@@ -112,7 +114,6 @@ body {
   color: rgb(0, 0, 0);
   font-family: var(--font-family-main);
   transition: background-color 0.5s ease;
-  
 }
 
 /* Universal Styling for h1, h2, h3, h4 */
@@ -126,7 +127,7 @@ h1, h2, h3, h4 {
   border: 2px solid var(--oil-black);
 }
 
-/* Styling for Buttons (Download and Other Actions) */
+/* Styling for Buttons */
 .DownloadLink {
   text-decoration: none;
 }
@@ -139,7 +140,6 @@ h1, h2, h3, h4 {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  text-align: center;
 }
 
 .DownloadButtons:hover {
@@ -169,12 +169,14 @@ h1, h2, h3, h4 {
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .CollageImages:hover {
   width: 150%;
   max-height: 500px;
 }
-.Content{
-  display:flex;
+
+.Content {
+  display: flex;
   flex-direction: column;
   gap: 10px;
 }
@@ -183,28 +185,101 @@ h1, h2, h3, h4 {
   font-weight: bold;
   color: var(--oil-black);
   text-shadow: "0 0 10px orange";
- -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-
+  user-select: none;
 }
+
 #Omnisiah:hover {
   cursor: pointer;
-  transform: scale(1.1); /* Makes it grow a bit when hovered */
+  transform: scale(1.1);
   transition: scale(1.1) ease;
 }
+
 #timerDisplay {
-  color:(--tech-red); /*Hide Timer*/
+  color: var(--tech-red);
 }
 
 #UselessButton {
-  font-size: 1.2rem; /* Slightly larger font for better readability */
-  padding: 0.8rem 1.5rem; /* Comfortable padding for touch */
-  width: auto; /* Adjust width based on content */
-  min-width: 150px; /* Minimum width for consistency */
-  border-radius: 5px; /* Rounded edges for aesthetics */
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  width: auto;
+  min-width: 150px;
+  border-radius: 5px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .ContentBoxes {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .AccessText {
+    font-size: 16px;
+  }
+
+  .TabButtons a, .TabButtons button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .CollageImages img {
+    max-height: 150px;
+  }
+
+  .CollageImages:hover {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Tablet Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .ContentBoxes {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .AccessText {
+    font-size: 18px;
+  }
+
+  .TabButtons a, .TabButtons button {
+    font-size: 16px;
+    padding: 9px 18px;
+  }
+
+  .CollageImages img {
+    max-height: 180px;
+  }
+
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Desktop Devices (min-width: 768px) */
+@media (min-width: 768px) {
+  .ContentBoxes {
+    max-width: 500px;
+    padding: 20px;
+  }
+
+  .AccessText {
+    font-size: 19px;
+  }
+
+  .TabButtons a, .TabButtons button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .CollageImages img {
+    max-height: 200px;
+  }
 }
