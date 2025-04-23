@@ -58,6 +58,10 @@
 .ContentBoxes div {
   align-content: center;
 }
+.ContentBoxes img{
+  width: 10%;
+  height: auto;
+}
 
 /* General Text Elements (headings and content) */
 .AccessText {
