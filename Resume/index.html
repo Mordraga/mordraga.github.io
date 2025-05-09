@@ -1,129 +1,123 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <!-- Title of the webpage displayed in the browser tab -->
-        <title>Saryn's Portfolio</title>
-        <!-- Link to external font (Cinzel) for a Gothic feel -->
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-        <!-- Link to the external CSS file to apply styles -->
-        <link rel="stylesheet" href="/style.css">
-    </head>
-    <body>
-        <nav class="TabButtons">
-            <a href="/index.html">About Me</a>
-            <a href="#resume">Resume</a>
-            <a href="/Projects/index.html">Projects</a>
-           </nav>
-        <!-- Resume Section -->
-        <section id="resume">
-        <div class="ContentBoxes">
-            <div>
-            <h3>Resume</h3>
-                <p>In this section, you can find an overview of my credentials and experience.<br>
-                    For your convenience, a copy of my resume is available at the bottom if you're interested in learning more or discussing potential opportunities.
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saryn's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="TabButtons">
+        <a href="/index.html">About Me</a>
+        <a href="#resume">Resume</a>
+        <a href="/Projects/index.html">Projects</a>
+    </nav>
+
+    <!-- Resume Section -->
+    <main id="resume">
+        <section class="ContentBoxes">
+            <header>
+                <h1>Resume</h1>
+                <p>
+                    In this section, you can find an overview of my credentials and experience.<br>
+                    A downloadable copy of my resume is available at the bottom.
                 </p>
-                    
-            </div>
+            </header>
 
-            <h4>Highlights</h4>
+            <section>
+                <h2>Highlights</h2>
 
-            <h5 class="AccessText">Technical Skills</h5>
-            <div class="ContentBoxes">
-                <ul>
-                    <li>AI Integration</li>
-                    <li>Software Languages
-                        <ul>
-                            <li>JavaScript</li>
-                            <li>HTML</li>
-                            <li>C#</li>
-                            <li>CSS</li>
-                            <li>Python</li>
-                            <li>JSON</li>
-                        </ul>
-                    </li>
-                    <li>3D Modeling & Printing</li>
-                    <li>Game Development (Unity)</li>
-                    <li>Version Control (GitHub)</li>
-                </ul>
-            </div>
+                <article>
+                    <h3 class="AccessText">Technical Skills</h3>
+                    <ul>
+                        <li>AI Integration</li>
+                        <li>Software Languages
+                            <ul>
+                                <li>JavaScript</li>
+                                <li>HTML</li>
+                                <li>C#</li>
+                                <li>CSS</li>
+                                <li>Python</li>
+                                <li>JSON</li>
+                            </ul>
+                        </li>
+                        <li>3D Modeling & Printing</li>
+                        <li>Game Development (Unity)</li>
+                        <li>Version Control (GitHub)</li>
+                    </ul>
+                </article>
 
-            <h5 class="AccessText">Soft Skills</h5>
-            <div class="ContentBoxes">
-                <ul>
-                    <li>Problem Solving</li>
-                    <li>Strategic Thinking</li>
-                    <li>Creative Writing</li>
-                    <li>Task Delegation</li>
-                    <li>Adaptability</li>
-                </ul>
-            </div>
+                <article>
+                    <h3 class="AccessText">Soft Skills</h3>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Strategic Thinking</li>
+                        <li>Creative Writing</li>
+                        <li>Task Delegation</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </article>
 
-            <h5 class="AccessText">Social/Professional Skills</h5>
-            <div class="ContentBoxes">
-                <ul>
-                    <li>Customer Service</li>
-                    <li>Conflict Resolution</li>
-                    <li>Team Collaboration</li>
-                    <li>Mentoring</li>
-                    <li>Live Streaming & Online Engagement</li>
-                </ul>
-            </div>
-            <h5 class="AccessText">Awards</h5>
-            <div class="ContentBoxes">
-                <ul>
-                    <li>Top 5 kiosk sales consultant, driving sales growth.</li>
-                    <li>Bilingual (English/German) with award-winning German skills.</li>
-                    <li>Led software projects and developed user content.</li>
-                    <li>Trained new employees, boosting team performance.</li>
-                    <li>Designed digital assets with Photoshop & Illustrator.</li>
-                    <li>Managed a live-streaming platform with 150+ followers.</li>
-                </ul>
-            </div>
-            <br>
-        </div>
-        <br>
-                  <!-- Main content area for contact information -->
-  <section id="contact" class="MainText">
-    
-    <!-- Contact instruction (fixed h5 closing tag) -->
-    <div  class="ContentBoxes">
-        <!-- Section heading -->
-        <h3>Contact Info</h3>
-        <p>Feel free to send me an email at Sarynharris2021@gmail.com</p>
-        <p>Just leave your contact info here!</p>
-       <!-- Contact form -->
-        <form action="mailto:sarynharris2021@gmail.com?subject=Contact%20from%20Portfolio" method="post" enctype="text/plain">
-    
-            <!-- User's name -->
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="Name"><br><br>
-    
-            <!-- User's email -->
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="Email"><br><br>
-    
-            <!-- User's comment -->
-            <label for="comment">Comment:</label><br>
-            <textarea id="comment" name="Comment" rows="4" cols="40"></textarea><br><br>
-    
-            <!-- Submit and Reset buttons -->
-            <input type="submit" value="Send">
-            <input type="reset" value="Clear">
-        </form>
-    </div>
-  </section>
-                <!-- Removed redundant class for better clarity -->
+                <article>
+                    <h3 class="AccessText">Social/Professional Skills</h3>
+                    <ul>
+                        <li>Customer Service</li>
+                        <li>Conflict Resolution</li>
+                        <li>Team Collaboration</li>
+                        <li>Mentoring</li>
+                        <li>Live Streaming & Online Engagement</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3 class="AccessText">Awards</h3>
+                    <ul>
+                        <li>Top 5 kiosk sales consultant, driving sales growth.</li>
+                        <li>Bilingual (English/German) with award-winning German skills.</li>
+                        <li>Led software projects and developed user content.</li>
+                        <li>Trained new employees, boosting team performance.</li>
+                        <li>Designed digital assets with Photoshop & Illustrator.</li>
+                        <li>Managed a live-streaming platform with 150+ followers.</li>
+                    </ul>
+                </article>
+            </section>
+
+            <!-- Resume Download -->
+            <footer>
                 <a href="/Resume/Saryn Harris Resume 4-16-2025.pdf" download>
                     <button class="DownloadButtons">Download My Full Resume Here!</button>
                 </a>
-            </div>
-
-            <br>
-
-            <nav class="TabButtons">
-                <button onclick="history.back()">← Go Back</button>
-            </nav>
+                <nav class="TabButtons">
+                    <button onclick="history.back()">← Go Back</button>
+                </nav>
+            </footer>
         </section>
-    </body>
+    </main>
+
+    <!-- Contact Section (separate from Resume) -->
+    <section id="contact" class="MainText">
+        <div class="ContentBoxes">
+            <h2>Contact Info</h2>
+            <p>Feel free to send me an email at <a href="mailto:sarynharris2021@gmail.com">Sarynharris2021@gmail.com</a></p>
+            <p>Just leave your contact info here!</p>
+
+            <form action="mailto:sarynharris2021@gmail.com?subject=Contact%20from%20Portfolio" method="post" enctype="text/plain">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="Name"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="Email"><br><br>
+
+                <label for="comment">Comment:</label><br>
+                <textarea id="comment" name="Comment" rows="4" cols="40"></textarea><br><br>
+
+                <input type="submit" value="Send">
+                <input type="reset" value="Clear">
+            </form>
+        </div>
+    </section>
+
+</body>
 </html>

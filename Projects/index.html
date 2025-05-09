@@ -1,57 +1,57 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Title of the webpage displayed in the browser tab -->
-  <title>Saryn's Portfolio</title>
-
-  <!-- Link to external font (Cinzel) for a Gothic feel -->
+  <title>Saryn's Portfolio - Projects</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Link to the external CSS file to apply styles -->
   <link rel="stylesheet" href="/../style.css">
 </head>
 <body>
-  <nav class="TabButtons">
+  <nav class="TabButtons" role="navigation" aria-label="Main navigation">
     <a href="/index.html">About Me</a>
     <a href="/Resume/index.html">Resume</a>
     <a href="#projects">Projects</a>
-   </nav>
-   <section id="projects">
-    <div class="ContentBoxes">
-      <h3>Projects</h3>
-      <p class="ContentBoxes">Down below is some of the things I am working on!<br>
-        This is in no way a comprehensive list but it's a start.
-      </p>
-      <section class="ContentBoxes">
-        <p><strong>Long War: </strong>A Dungeons & Dragons-style roleplaying module that includes modern firearms and other technology.</p>
+  </nav>
+
+  <main>
+    <section id="projects" class="ContentBoxes">
+      <h2>Projects</h2>
+      <p>Down below are some of the things I am working on!<br>This is in no way a comprehensive list but it's a start.</p>
+
+      <article class="ContentBoxes">
+        <h3>Long War</h3>
+        <p>A Dungeons & Dragons-style roleplaying module that includes modern firearms and other technology.</p>
         <div class="CollageImages">
-          <img src="/Assets/LongWar/Screenshots/LongWarScreenshot0.png" alt="Screenshot of Long War project">
-          <img src="/Assets/LongWar/Screenshots/LongWarScreenshot1.png" alt="Screenshot of Long War project">
-          <img src="/Assets/LongWar/Screenshots/LongWarScreenshot2.png" alt="Screenshot of Long War project">
-          <img src="/Assets/LongWar/Screenshots/LongWarScreenshot3.png" alt="Screenshot of Long War project">        
+          <img src="/Assets/LongWar/Screenshots/LongWarScreenshot0.png" alt="Screenshot 1 of Long War project">
+          <img src="/Assets/LongWar/Screenshots/LongWarScreenshot1.png" alt="Screenshot 2 of Long War project">
+          <img src="/Assets/LongWar/Screenshots/LongWarScreenshot2.png" alt="Screenshot 3 of Long War project">
+          <img src="/Assets/LongWar/Screenshots/LongWarScreenshot3.png" alt="Screenshot 4 of Long War project">        
         </div>
-      </section>  
-      <section class="ContentBoxes">
-        <p><strong>Astrophotography: </strong>Interstellar Photography.</p>
-      </section>
-      <section class="ContentBoxes">
-        <p><strong>Livestreaming: </strong><span class="strikethrough">Livestreaming on </span><em>Currently on indefinite hiatus. </em><span class="strikethrough">Come say Hi!</span></p>
-      </section>
-      <section class="ContentBoxes">
-        <p><strong>Heartfelt Crochet Creations: </strong>A small little website I am coding for a friend.</p>
+      </article>
+
+      <article class="ContentBoxes">
+        <h3>Astrophotography</h3>
+        <p>Interstellar Photography.</p>
+      </article>
+
+      <article class="ContentBoxes">
+        <h3>Livestreaming</h3>
+        <p><span class="strikethrough">Livestreaming on </span><em>Currently on indefinite hiatus.</em> <span class="strikethrough">Come say Hi!</span></p>
+      </article>
+
+      <article class="ContentBoxes">
+        <h3>Heartfelt Crochet Creations</h3>
+        <p>A small little website I am coding for a friend.</p>
         <div class="CollageImages">
-          <img src="/Assets/heartfeltCrochetCreations/crochetSiteMainHeader.jpg" alt="Screenshot of Heartfelt Crochet Project">
-          <img src="/Assets/heartfeltCrochetCreations/crochetSiteMainPage.jpg" alt="Screenshot of Heartfelt Crochet Project">
+          <img src="/Assets/heartfeltCrochetCreations/crochetSiteMainHeader.jpg" alt="Heartfelt Crochet Creations main header">
+          <img src="/Assets/heartfeltCrochetCreations/crochetSiteMainPage.jpg" alt="Heartfelt Crochet Creations main page screenshot">
         </div>
-      </section>
-    </div>
-   </section>
-  </div>  
-  
-<nav class="TabButtons">
+      </article>
+    </section>
+  </main>
+
+  <nav class="TabButtons" role="navigation" aria-label="Go back navigation">
     <button onclick="history.back()">← Go Back</button>
-</nav>
+  </nav>
 </body>
 </html>
