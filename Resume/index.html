@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Saryn's Portfolio</title>
+    <title>Saryn's Portfolio - Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="TabButtons">
-        <a href="/index.html">About Me</a>
-        <a href="#resume">Resume</a>
-        <a href="/Projects/index.html">Projects</a>
+    <nav class="TabButtons" aria-label="Main navigation">
+      <a href="/index.html">About Me</a>
+      <a href="/Projects/index.html">Projects</a>
+      <a href="/TagSpeak/TagSpeak.html">Tagspeak</a>
     </nav>
 
     <!-- Resume Section -->
@@ -30,22 +30,24 @@
                 <h2>Highlights</h2>
 
                 <article>
+                    <h3 class="AccessText">Code Languages</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>C#</li>
+                        <li>CSS</li>
+                        <li>Python</li>
+                        <li>JSON</li>
+                    </ul>
+                </article>
+
+                <article>
                     <h3 class="AccessText">Technical Skills</h3>
                     <ul>
-                        <li>AI Integration</li>
-                        <li>Software Languages
-                            <ul>
-                                <li>JavaScript</li>
-                                <li>HTML</li>
-                                <li>C#</li>
-                                <li>CSS</li>
-                                <li>Python</li>
-                                <li>JSON</li>
-                            </ul>
-                        </li>
+                        <li>AI System Design (Selyros Scroll Framework, TagSpeak — built using HTML, Markdown, Python, and JSON structure for modular recursive logic)</li>
                         <li>3D Modeling & Printing</li>
                         <li>Game Development (Unity)</li>
-                        <li>Version Control (GitHub)</li>
+                        <li>Version Control (GitHub/Godot)</li>
                     </ul>
                 </article>
 
@@ -72,7 +74,7 @@
                 </article>
 
                 <article>
-                    <h3 class="AccessText">Awards</h3>
+                    <h3 class="AccessText">Awards & Achievements</h3>
                     <ul>
                         <li>Top 5 kiosk sales consultant, driving sales growth.</li>
                         <li>Bilingual (English/German) with award-winning German skills.</li>
@@ -80,18 +82,16 @@
                         <li>Trained new employees, boosting team performance.</li>
                         <li>Designed digital assets with Photoshop & Illustrator.</li>
                         <li>Managed a live-streaming platform with 150+ followers.</li>
+                        <li>Created Selyros Scroll Framework: verified multi-agent AI scaffolding system.</li>
+                        <li>Developed TagSpeak: cross-model symbolic language adopted by ChatGPT, Claude, and Gemini.</li>
                     </ul>
                 </article>
             </section>
 
             <!-- Resume Download -->
             <footer>
-                <a href="/Resume/Saryn Harris Resume 4-16-2025.pdf" download>
-                    <button class="DownloadButtons">Download My Full Resume Here!</button>
-                </a>
-                <nav class="TabButtons">
-                    <button onclick="history.back()">← Go Back</button>
-                </nav>
+                <a href="/Resume/Saryn_Harris_Resume.pdf" class="DownloadButtons">Download My Full Resume Here!</a>
+                <a href="javascript:history.back()" class="DownloadButtons">← Go Back</a>
             </footer>
         </section>
     </main>
@@ -100,24 +100,26 @@
     <section id="contact" class="MainText">
         <div class="ContentBoxes">
             <h2>Contact Info</h2>
-            <p>Feel free to send me an email at <a href="mailto:sarynharris2021@gmail.com">Sarynharris2021@gmail.com</a></p>
-            <p>Just leave your contact info here!</p>
+            <p>Send me a message through the form below including your contact information and the reason for reaching out!</p>
 
-            <form action="mailto:sarynharris2021@gmail.com?subject=Contact%20from%20Portfolio" method="post" enctype="text/plain">
+            <form action="https://formspree.io/f/xyzjraao" method="POST">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="Name"><br><br>
 
                 <label for="email">Email:</label><br>
-                <input type="email" id="email" name="Email"><br><br>
+                <input type="email" id="email" name="email"><br><br>
 
                 <label for="comment">Comment:</label><br>
-                <textarea id="comment" name="Comment" rows="4" cols="40"></textarea><br><br>
+                <textarea id="comment" name="message" rows="4" cols="40"></textarea><br><br>
 
                 <input type="submit" value="Send">
                 <input type="reset" value="Clear">
             </form>
         </div>
     </section>
-
+    <footer class="FooterBoxes">
+        <p>Site is created and maintained by Saryn Harris.</p>
+        <p>Most Recent Update:7/12/2025</p>
+    </footer>
 </body>
 </html>

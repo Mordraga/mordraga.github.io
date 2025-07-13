@@ -64,6 +64,9 @@ document.getElementById("uselessButton").addEventListener("click", function () {
   } else if (clickCounter === 150) {
     button.innerText = "...";
   }
+  else if (clickCounter === 250) {
+    buttton.innerText = "[you:did]>[you:can]=[creator:site:respect]";
+  }
 });
 
 function startTimer() {

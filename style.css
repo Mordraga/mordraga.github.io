@@ -181,6 +181,16 @@ h1, h2, h3, h4 {
   gap: 10px;
 }
 
+.FooterBoxes {
+  background: var(--bone-to-copper);
+  padding: auto;
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--glow-gold);
+  box-shadow: var(--box-shadow);
+  max-width: 500px;
+  margin: 10px auto;
+}
+
 #Omnisiah {
   font-weight: bold;
   color: var(--oil-black);
