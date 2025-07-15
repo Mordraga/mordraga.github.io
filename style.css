@@ -36,6 +36,10 @@
 
 /* Standard Content Box Styling */
 .ContentBoxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: var(--bone-to-copper);
   padding: var(--content-padding);
   border-radius: var(--border-radius);
@@ -64,6 +68,10 @@
 .ContentBoxes img {
   width: 10%;
   height: auto;
+}
+.ContentBoxes h1,h2,h3,{
+  padding: 10px;
+  margin: 10px;
 }
 
 /* General Text Elements */
