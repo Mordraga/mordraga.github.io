@@ -216,42 +216,6 @@ h1, h2, h3, h4 {
   border-radius: 5px;
 }
 
-.tagspeak-theme {
-    background: black;
-    color: #ffd700;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--content-padding);
-}
-
-.tagspeak-theme h1,
-.tagspeak-theme h2,
-.tagspeak-theme h3 {
-    background: black;
-    color: #ffd700;
-    border: 2px solid #ffd700;
-    border-radius: var(--border-radius);
-    padding: 10px;
-}
-
-.tagspeak-theme .ContentBoxes {
-    background: #111;
-    border: 2px solid #ffd700;
-    color: #ffd700;
-    padding: var(--content-padding);
-    margin: var(--content-padding);
-    max-width: 800px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.tagspeak-theme textarea{
-  max-width:95%;
-  user-select:none;
-  -webkit-user-drag: none;
-}
-
 
 /* Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
