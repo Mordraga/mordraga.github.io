@@ -246,14 +246,19 @@ h1, h2, h3, h4 {
     box-sizing: border-box;
 }
 
+.tagspeak-theme textarea{
+  max-width:95%;
+  user-select:none;
+  -webkit-user-drag: none;
+}
 
-/* Media Queries for Responsive Design */
 
 /* Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
   .ContentBoxes {
-    max-width: 100%;
-    padding: 10px;
+    max-width: 95%;
+    padding: 15px;
+    font-size: 18px;
   }
 
   .AccessText {
@@ -283,7 +288,8 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
   .ContentBoxes {
     max-width: 90%;
-    padding: 15px;
+    padding: 20px;
+    font-size: 18px;
   }
 
   .AccessText {
@@ -307,8 +313,9 @@ h1, h2, h3, h4 {
 /* Desktop Devices (min-width: 768px) */
 @media (min-width: 768px) {
   .ContentBoxes {
-    max-width: 500px;
+    max-width: 600px;
     padding: 20px;
+    font-size: 19px;
   }
 
   .AccessText {
