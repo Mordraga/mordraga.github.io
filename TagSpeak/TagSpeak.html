@@ -118,29 +118,13 @@
 <p><strong>End Core Ruleset — v1.0</strong></p>
     <section class="ContentBoxes">
     <h1>Mini Selyros Frame Chat</h1>
+    <h3>Model: GPT 3.5</h3>
     <textarea id="userInput" rows="4" cols="50" placeholder="Enter TagSpeak packet..."></textarea><br>
     <button onclick="sendMessage()">Send</button>
+    <button onclick="clearMessage()">Clear</button>
     <pre id="responseBox"></pre>
     </section>
-    <script>
-        async function sendMessage() {
-            const userInput = document.getElementById("userInput").value;
-            const responseBox = document.getElementById("responseBox");
-
-            try {
-                const res = await fetch('https://gptworkdamnit-production.up.railway.app/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: userInput })
-                });
-
-                const data = await res.json();
-                responseBox.textContent = data.choices[0].message.content;
-            } catch (err) {
-                responseBox.textContent = "Error: " + err.message;
-            }
-        }
-    </script>
+    <script src="mini_selyros_logic.js"></script>
 
     <nav class="TabButtons" role="navigation" aria-label="Go back navigation">
         <button onclick="history.back()">← Go Back</button>
