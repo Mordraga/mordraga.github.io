@@ -41,7 +41,7 @@
   border-radius: var(--border-radius);
   border: var(--border-width) solid var(--glow-gold);
   box-shadow: var(--box-shadow);
-  max-width: 500px;
+  max-width: 95vw;
   margin: 10px auto;
   overflow-wrap: anywhere;
 }
