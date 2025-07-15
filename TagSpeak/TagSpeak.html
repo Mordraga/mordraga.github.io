@@ -117,7 +117,12 @@
   <li><blockquote>[request:joke] > [tone:light] > [style:one-liner]</blockquote></li>
 </ol>
 <p><strong>End Core Ruleset — v1.0</strong></p>
-
+    <section class="ContentBoxes">
+    <h1>Mini Selyros Frame Chat</h1>
+    <textarea id="userInput" rows="4" cols="50" placeholder="Enter TagSpeak packet..."></textarea><br>
+    <button onclick="sendMessage()">Send</button>
+    <pre id="responseBox"></pre>
+    </section>
     <script>
         async function sendMessage() {
             const userInput = document.getElementById("userInput").value;

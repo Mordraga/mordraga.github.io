@@ -235,8 +235,8 @@ h1, h2, h3, h4 {
     background: #111;
     border: 2px solid #ffd700;
     color: #ffd700;
-    padding: --content-padding
-    margin: var(  --content-padding)
+    padding: --content-padding;
+    margin: var(  --content-padding);
 }
 
 
@@ -255,7 +255,7 @@ h1, h2, h3, h4 {
 
   .TabButtons a, .TabButtons button {
     font-size: 14px;
-    padding: 8px 15px;
+    padding: 8px 15px; 
   }
 
   .CollageImages img {
