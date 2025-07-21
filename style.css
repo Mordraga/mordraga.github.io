@@ -148,33 +148,43 @@ h1, h2, h3, h4 {
 }
 
 blockquote {
-  background: #f5f1e6; /* soft parchment, slightly warmer than code blocks */
+  background: #f5f1e6;
   border-left: 6px solid var(--glow-gold);
   border-right: 2px solid var(--copper);
   border-top: 1px solid var(--copper);
   border-bottom: 1px solid var(--copper);
   border-radius: 12px;
   padding: 12px 16px;
-  margin: 12px 0;
+  margin: 16px 0;
   font-style: italic;
   color: #2e2e2e;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
-  overflow-x: scroll;
-  max-width: fit-content;
+  max-width: 80ch; /* smooth read width */
 }
 
+code {
+  background-color: #2e2e2e;
+  color: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: inline;
+  font-family: 'Courier New', monospace;
+  padding: 2px 6px
+}
 
-code, pre {
-  background-color: #2e2e2e; /* mech-gray */
-  color: #f5f5f5;            /* purity-white */
+pre {
+  background-color: #2e2e2e;
+  color: #f5f5f5;
   padding: 8px 12px;
   border-radius: 6px;
-  font-family: 'Courier New', monospace;
   font-size: 0.95rem;
-  display: block;
+  font-family: 'Courier New', monospace;
   overflow-x: scroll;
-  max-width: fit-content;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 
 /* Styling for Buttons */
