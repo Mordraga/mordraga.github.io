@@ -159,7 +159,8 @@ blockquote {
   font-style: italic;
   color: #2e2e2e;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
-  max-width: 80ch; /* smooth read width */
+  max-width: 80ch;
+  overflow-wrap: break-word;
 }
 
 code {
@@ -170,7 +171,8 @@ code {
   font-size: 0.9rem;
   display: inline;
   font-family: 'Courier New', monospace;
-  padding: 2px 6px
+  white-space: normal; /* allow inline wrapping */
+  word-break: break-word;
 }
 
 pre {
@@ -180,10 +182,13 @@ pre {
   border-radius: 6px;
   font-size: 0.95rem;
   font-family: 'Courier New', monospace;
-  overflow-x: scroll;
+  white-space: pre-wrap; /* keeps newlines but wraps long lines */
+  word-break: break-word;
+  overflow-x: auto;
   width: 100%;
   box-sizing: border-box;
 }
+
 
 
 
