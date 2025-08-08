@@ -403,6 +403,16 @@ pre {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
+
+  .ActualImages:hover {
+  width: 100%;
+  max-height: 400px;
+  z-index: 100;
+  border: 2px solid var(--copper);
+  border-radius: 8px;
+  box-shadow: 0 0 8px var(--copper);
+  box-sizing: border-box;
+  }
 }
 
 /* Tablet Devices (max-width: 768px) */
