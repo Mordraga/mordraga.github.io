@@ -226,16 +226,19 @@ pre {
   box-sizing: border-box;
 }
 
+/* Force consistent sizing for project collages */
 .CollageImages img {
   width: 100%;
   height: auto;
-  max-height: 200px;
+  aspect-ratio: 16/9;
   object-fit: cover;
+  background-color: var(--oil-black);
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
 }
 
-.CollageImages:hover {
+
+.ActualImages:hover {
   width: 150%;
   max-height: 500px;
 }
@@ -292,6 +295,47 @@ pre {
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+.TagLine{
+  display:inline-block;
+  font-family:'Courier New', monospace;
+  background:#2e2e2e;
+  color:#f5f5f5;
+  padding:6px 10px;
+  border-radius:8px;
+  border:1px solid var(--copper);
+  box-shadow: var(--box-shadow);
+  margin:8px 0 12px;
+}
+
+.LinkRow{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.LinkButton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border:2px solid var(--glow-gold);
+  border-radius:10px;
+  background: var(--bone-to-copper);
+  color:#111;
+  text-decoration:none;
+  font-family: var(--font-family-header);
+  text-transform: uppercase;
+  box-shadow: var(--box-shadow);
+}
+
+.LinkButton:hover{
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  transition: .15s ease;
+}
+
 
 
 /* Mobile Devices (max-width: 480px) */
