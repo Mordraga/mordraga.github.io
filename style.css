@@ -241,7 +241,13 @@ pre {
 .ActualImages:hover {
   width: 150%;
   max-height: 500px;
+  z-index: 100;
+  border: 2px solid var(--copper);
+  border-radius: 8px;
+  box-shadow: 0 0 8px var(--copper);
+  box-sizing: border-box;
 }
+
 
 .Content {
   display: flex;
