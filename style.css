@@ -1,464 +1,149 @@
-/* Color Definitions */
-:root {
-  --tech-red: #960e29;
-  --mech-gray: #2e2e2e;
-  --glow-gold: #ffd700;
-  --purity-white: #f5f5f5;
-  --bone: #EDE6D2;
-  --copper: #B47C4B;
-  --bone-to-copper: linear-gradient(to bottom right, #EDE6D2, #B47C4B);
-  --brass-metal: #b5a642;
-  --holy-blue: #4f8cff;
-  --data-green: #00ff9f;
-  --oil-black: #0f0f0f;
-  --warning-orange: #ff6600;
-  --font-family-main: 'Exo 2', sans-serif;
-  --font-family-header: 'Trajan Pro', serif;
-  --content-padding: 20px;
-  --border-radius: 10px;
-  --border-width: 2px;
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+/* ============ THEME VARS ============ */
+:root{
+  --tech-red:#960e29; --mech-gray:#2e2e2e; --glow-gold:#ffd700; --purity-white:#f5f5f5;
+  --bone:#EDE6D2; --copper:#B47C4B; --bone-to-copper:linear-gradient(to bottom right,#EDE6D2,#B47C4B);
+  --brass-metal:#b5a642; --holy-blue:#4f8cff; --data-green:#00ff9f; --oil-black:#0f0f0f; --warning-orange:#ff6600;
+  --font-family-main:'Exo 2',sans-serif; --font-family-header:'Trajan Pro',serif;
+  --content-padding:20px; --border-radius:10px; --border-width:2px; --box-shadow:0 4px 8px rgba(0,0,0,.3);
 }
 
-.noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+/* ============ UTILS ============ */
+.noselect{ -webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+.strikethrough{ text-decoration:line-through; }
+
+/* ============ BASE ============ */
+body{
+  background:var(--tech-red); color:#000; font-family:var(--font-family-main);
+  font-size:19px; text-align:center; transition:background-color .5s ease;
+}
+h1,h2,h3,h4{
+  font-family:var(--font-family-header); letter-spacing:1px; text-transform:uppercase; color:#fff;
+  background:var(--tech-red); border-radius:10px; border:2px solid var(--oil-black);
+  display:inline-block; max-width:100%; word-wrap:break-word; overflow-wrap:break-word; white-space:normal;
+  text-align:center; padding:10px 15px; margin:10px auto;
+}
+blockquote{
+  background:#f5f1e6; color:#2e2e2e; font-style:italic; max-width:80ch; overflow-wrap:break-word;
+  border-left:6px solid var(--glow-gold); border-right:2px solid var(--copper);
+  border-top:1px solid var(--copper); border-bottom:1px solid var(--copper);
+  border-radius:12px; padding:12px 16px; margin:16px 0; box-shadow:2px 2px 6px rgba(0,0,0,.15);
+}
+code{
+  background:#2e2e2e; color:#f5f5f5; padding:2px 6px; border-radius:4px; font-size:.9rem;
+  display:inline; font-family:'Courier New',monospace; white-space:normal; word-break:break-word;
+}
+pre{
+  background:#2e2e2e; color:#f5f5f5; padding:8px 12px; border-radius:6px; font-size:.95rem;
+  font-family:'Courier New',monospace; white-space:pre-wrap; word-break:break-word; overflow-x:auto; width:100%; box-sizing:border-box;
 }
 
-/* General Tool */
-.strikethrough {
-  text-decoration: line-through;
+/* ============ COMPONENTS ============ */
+.ContentBoxes{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:var(--bone-to-copper); padding:var(--content-padding); border-radius:var(--border-radius);
+  border:var(--border-width) solid var(--glow-gold); box-shadow:var(--box-shadow);
+  max-width:95vw; margin:10px auto; overflow-wrap:anywhere;
+}
+.ContentBoxes li,.ContentBoxes div{ padding:5px 0; margin:5px 0; }
+.ContentBoxes img{ width:10%; height:auto; }
+.ContentBoxes h1,.ContentBoxes h2,.ContentBoxes h3{ padding:10px; margin:10px; }
+
+.AccessText{ font-size:19px; text-align:center; color:var(--purity-white); font-family:var(--font-family-main); }
+
+.TabButtons{
+  display:flex; justify-content:space-evenly; align-items:stretch; flex-wrap:wrap; gap:2px;
+  background:var(--purity-white); padding:10px;
+}
+.TabButtons a,.TabButtons button{
+  flex:1 1 100px; display:flex; justify-content:center; align-items:center; padding:10px 20px; margin:5px;
+  background:var(--copper); border:var(--border-width) solid #9E1B32; color:#fff; font-family:var(--font-family-header);
+  text-transform:uppercase; transition:background-color .3s ease,color .3s ease;
+}
+.TabButtons a:hover,.TabButtons button:hover{ background:#F2A900; color:#000; }
+
+.DownloadLink{ text-decoration:none; }
+.DownloadButtons{
+  padding:10px 20px; background:#007bff; color:#fff; border:none; border-radius:5px; font-size:16px; cursor:pointer;
+}
+.DownloadButtons:hover{ background:#870029; }
+.DownloadButtons:focus{ outline:none; box-shadow:0 0 5px #bb0038; }
+
+.FooterBoxes{
+  background:var(--bone-to-copper); padding:auto; border-radius:var(--border-radius);
+  border:var(--border-width) solid var(--glow-gold); box-shadow:var(--box-shadow);
+  max-width:500px; margin:10px auto;
 }
 
-/* Standard Content Box Styling */
-.ContentBoxes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--bone-to-copper);
-  padding: var(--content-padding);
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--glow-gold);
-  box-shadow: var(--box-shadow);
-  max-width: 95vw;
-  margin: 10px auto;
-  overflow-wrap: anywhere;
+/* Little fun bits */
+#Omnisiah{ font-weight:bold; color:var(--oil-black); text-shadow:0 0 10px orange; user-select:none; }
+#Omnisiah:hover{ cursor:pointer; transform:scale(1.1); transition:transform .15s ease; }
+#timerDisplay{ color:var(--tech-red); }
+#UselessButton{ font-size:1.2rem; padding:.8rem 1.5rem; width:auto; min-width:150px; border-radius:5px; }
+#responseBox{
+  background:#2e2e2e; color:#f5f5f5; padding:12px; border-radius:8px; font-family:'Courier New',monospace;
+  font-size:1rem; margin-top:10px; white-space:pre-wrap; word-break:break-word;
 }
 
-.ContentBoxes li,
-.ContentBoxes div {
-  padding: 5px 0;
-  margin: 5px 0;
-}
-
-.ContentBoxes li {
-  align-content: left;
-}
-
-.ContentBoxes div {
-  align-content: center;
-}
-
-.ContentBoxes img {
-  width: 10%;
-  height: auto;
-}
-.ContentBoxes h1,
-.ContentBoxes h2,
-.ContentBoxes h3 {
-  padding: 10px;
-  margin: 10px;
-}
-
-/* General Text Elements */
-.AccessText {
-  font-size: 19px;
-  text-align: center;
-  color: var(--purity-white);
-  font-family: var(--font-family-main);
-}
-
-/* Buttons and Navigation */
-.TabButtons {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 2px;
-  background-color: var(--purity-white);
-  padding: 10px;
-}
-
-.TabButtons a,
-.TabButtons button {
-  flex: 1 1 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: var(--copper);
-  border: var(--border-width) solid #9E1B32;
-  color: white;
-  font-family: var(--font-family-header);
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-}
-
-.TabButtons a:hover,
-.TabButtons button:hover {
-  background-color: #F2A900;
-  color: black;
-}
-
-/* Body Styling */
-body {
-  background-color: var(--tech-red);
-  font-size: 19px;
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-family: var(--font-family-main);
-  transition: background-color 0.5s ease;
-}
-
-/* Universal Styling for h1, h2, h3, h4 */
-h1, h2, h3, h4 {
-  font-family: var(--font-family-header);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: white;
-  background-color: var(--tech-red);
-  border-radius: 10px;
-  border: 2px solid var(--oil-black);
-
-  /* PATCH: Header width control */
-  display: inline-block;
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  text-align: center;
-  padding: 10px 15px;
-  margin: 10px auto;
-}
-
-blockquote {
-  background: #f5f1e6;
-  border-left: 6px solid var(--glow-gold);
-  border-right: 2px solid var(--copper);
-  border-top: 1px solid var(--copper);
-  border-bottom: 1px solid var(--copper);
-  border-radius: 12px;
-  padding: 12px 16px;
-  margin: 16px 0;
-  font-style: italic;
-  color: #2e2e2e;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
-  max-width: 80ch;
-  overflow-wrap: break-word;
-}
-
-code {
-  background-color: #2e2e2e;
-  color: #f5f5f5;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  display: inline;
-  font-family: 'Courier New', monospace;
-  white-space: normal; /* allow inline wrapping */
-  word-break: break-word;
-}
-
-pre {
-  background-color: #2e2e2e;
-  color: #f5f5f5;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  font-family: 'Courier New', monospace;
-  white-space: pre-wrap; /* keeps newlines but wraps long lines */
-  word-break: break-word;
-  overflow-x: auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-
-
-
-/* Styling for Buttons */
-.DownloadLink {
-  text-decoration: none;
-}
-
-.DownloadButtons {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.DownloadButtons:hover {
-  background-color: #870029;
-}
-
-.DownloadButtons:focus {
-  outline: none;
-  box-shadow: 0 0 5px #bb0038;
-}
-
-/* Collage Image Gallery Styling */
-.CollageImages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
-  padding: 10px;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/* Force consistent sizing for project collages */
-.CollageImages img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  background-color: var(--oil-black);
-  border-radius: 12px;
-  box-shadow: var(--box-shadow);
-}
-
-
-.ActualImages:hover {
-  width: 150%;
-  max-height: 500px;
-  z-index: 100;
-  border: 2px solid var(--copper);
-  border-radius: 8px;
-  box-shadow: 0 0 8px var(--copper);
-  box-sizing: border-box;
-}
-
-
-.Content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.FooterBoxes {
-  background: var(--bone-to-copper);
-  padding: auto;
-  border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--glow-gold);
-  box-shadow: var(--box-shadow);
-  max-width: 500px;
-  margin: 10px auto;
-}
-
-#Omnisiah {
-  font-weight: bold;
-  color: var(--oil-black);
-  text-shadow: "0 0 10px orange";
-  user-select: none;
-}
-
-#Omnisiah:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  transition: scale(1.1) ease;
-}
-
-#timerDisplay {
-  color: var(--tech-red);
-}
-
-#UselessButton {
-  font-size: 1.2rem;
-  padding: 0.8rem 1.5rem;
-  width: auto;
-  min-width: 150px;
-  border-radius: 5px;
-}
-
-#responseBox {
-  background-color: #2e2e2e;
-  color: #f5f5f5;
-  padding: 12px;
-  border-radius: 8px;
-  font-family: 'Courier New', monospace;
-  font-size: 1rem;
-  margin-top: 10px;
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
+/* TagSpeak chip + link buttons */
 .TagLine{
-  display:inline-block;
-  font-family:'Courier New', monospace;
-  background:#2e2e2e;
-  color:#f5f5f5;
-  padding:6px 10px;
-  border-radius:8px;
-  border:1px solid var(--copper);
-  box-shadow: var(--box-shadow);
-  margin:8px 0 12px;
+  display:inline-block; font-family:'Courier New',monospace; background:#2e2e2e; color:#f5f5f5;
+  padding:6px 10px; border-radius:8px; border:1px solid var(--copper); box-shadow:var(--box-shadow); margin:8px 0 12px;
 }
-
-.LinkRow{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
+.LinkRow{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 .LinkButton{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 16px;
-  border:2px solid var(--glow-gold);
-  border-radius:10px;
-  background: var(--bone-to-copper);
-  color:#111;
-  text-decoration:none;
-  font-family: var(--font-family-header);
-  text-transform: uppercase;
-  box-shadow: var(--box-shadow);
+  display:inline-flex; align-items:center; justify-content:center; padding:10px 16px;
+  border:2px solid var(--glow-gold); border-radius:10px; background:var(--bone-to-copper);
+  color:#111; text-decoration:none; font-family:var(--font-family-header); text-transform:uppercase; box-shadow:var(--box-shadow);
 }
+.LinkButton:hover{ filter:brightness(1.05); transform:translateY(-1px); transition:.15s ease; }
 
-.LinkButton:hover{
-  filter: brightness(1.05);
-  transform: translateY(-1px);
-  transition: .15s ease;
+/* ============ COLLAGE GALLERY ============ */
+.CollageImages{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:16px; padding:10px; max-width:100%; box-sizing:border-box;
 }
-
-
-
-/* Mobile Devices (max-width: 480px) */
-@media (max-width: 480px) {
-  .ContentBoxes {
-    max-width: 95%;
-    padding: 15px;
-    font-size: 18px;
-  }
-
-  .AccessText {
-    font-size: 16px;
-  }
-
-  .TabButtons a, .TabButtons button {
-    font-size: 14px;
-    padding: 8px 15px; 
-  }
-
-  .CollageImages img {
-    max-height: 150px;
-  }
-
-  .CollageImages:hover {
-    width: 100%;
-    max-height: 300px;
-  }
-
-  body {
-    font-size: 16px;
-  }
-
-  textarea, pre {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-
-  .ContentBoxes {
-    text-align: left;
-    align-items: flex-start;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.25rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
-
-  li, blockquote {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .ActualImages:hover {
-  width: 100%;
-  max-height: 400px;
-  z-index: 100;
-  border: 2px solid var(--copper);
-  border-radius: 8px;
-  box-shadow: 0 0 8px var(--copper);
-  box-sizing: border-box;
+/* uniform tiles, no layout shifts */
+.CollageImages img{
+  width:100%; height:auto; aspect-ratio:16/9;
+  object-fit:cover; /* swap to 'contain' if you hate cropping */
+  background:var(--oil-black); border-radius:12px; box-shadow:var(--box-shadow);
+}
+/* hover effect ONLY on devices that actually hover */
+@media (hover:hover) and (pointer:fine){
+  .CollageImages img.ActualImages:hover{
+    transform:scale(1.5); /* replaces width change to avoid reflow */
+    max-height:500px; z-index:100; position:relative;
+    border:2px solid var(--copper); border-radius:8px; box-shadow:0 0 8px var(--copper); box-sizing:border-box;
   }
 }
 
-/* Tablet Devices (max-width: 768px) */
-@media (max-width: 768px) {
-  .ContentBoxes {
-    max-width: 90%;
-    padding: 20px;
-    font-size: 18px;
-  }
+/* ============ LAYOUT HELPERS ============ */
+.Content{ display:flex; flex-direction:column; gap:10px; }
 
-  .AccessText {
-    font-size: 18px;
-  }
-
-  .TabButtons a, .TabButtons button {
-    font-size: 16px;
-    padding: 9px 18px;
-  }
-
-  .CollageImages img {
-    max-height: 180px;
-  }
-
-  body {
-    font-size: 18px;
-  }
+/* ============ RESPONSIVE ============ */
+/* phones */
+@media (max-width:480px){
+  body{ font-size:16px; }
+  .ContentBoxes{ max-width:95%; padding:15px; font-size:18px; text-align:left; align-items:flex-start; }
+  .AccessText{ font-size:16px; }
+  .TabButtons a,.TabButtons button{ font-size:14px; padding:8px 15px; }
+  .CollageImages img{ max-height:150px; }
+  textarea,pre{ width:100%; max-width:100%; box-sizing:border-box; font-size:1rem; margin-top:10px; }
+  h1{ font-size:1.5rem; } h2{ font-size:1.25rem; } h3{ font-size:1.1rem; }
+  li,blockquote{ overflow-wrap:break-word; }
 }
-
-/* Desktop Devices (min-width: 768px) */
-@media (min-width: 768px) {
-  .ContentBoxes {
-    max-width: 600px;
-    padding: 20px;
-    font-size: 19px;
-  }
-
-  .AccessText {
-    font-size: 19px;
-  }
-
-  .TabButtons a, .TabButtons button {
-    font-size: 18px;
-    padding: 10px 20px;
-  }
-
-  .CollageImages img {
-    max-height: 200px;
-  }
+/* tablets */
+@media (max-width:768px){
+  .ContentBoxes{ max-width:90%; padding:20px; font-size:18px; }
+  .AccessText{ font-size:18px; }
+  .TabButtons a,.TabButtons button{ font-size:16px; padding:9px 18px; }
+  .CollageImages img{ max-height:180px; }
+  body{ font-size:18px; }
+}
+/* desktop */
+@media (min-width:768px){
+  .ContentBoxes{ max-width:600px; padding:20px; font-size:19px; }
+  .AccessText{ font-size:19px; }
+  .TabButtons a,.TabButtons button{ font-size:18px; padding:10px 20px; }
+  .CollageImages img{ max-height:200px; }
 }
