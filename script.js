@@ -88,3 +88,51 @@ function startTimer() {
     }
   }, 1000);
 }
+
+// --- Mobile-friendly image popup (lightbox) ---
+(function () {
+  // build overlay once
+  const overlay = document.createElement('div');
+  overlay.className = 'popup-overlay';
+  overlay.setAttribute('role','dialog');
+  overlay.setAttribute('aria-modal','true');
+  overlay.innerHTML = `
+    <button class="popup-close" aria-label="Close">Close</button>
+    <img src="" alt="">
+  `;
+  document.body.appendChild(overlay);
+
+  const imgEl = overlay.querySelector('img');
+  const closeBtn = overlay.querySelector('.popup-close');
+
+  function open(src, alt) {
+    imgEl.src = src;
+    imgEl.alt = alt || '';
+    overlay.style.display = 'flex';
+    document.body.classList.add('no-scroll');
+  }
+
+  function close() {
+    overlay.style.display = 'none';
+    imgEl.src = '';
+    document.body.classList.remove('no-scroll');
+  }
+
+  // open on click/tap of any gallery image
+  document.querySelectorAll('.ActualImages').forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', () => open(el.src, el.alt), { passive: true });
+    el.addEventListener('touchend', () => open(el.src, el.alt), { passive: true });
+  });
+
+  // close handlers
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', (e) => {
+    // only close if you click the backdrop, not the image
+    if (e.target === overlay) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.style.display === 'flex') close();
+  }, { passive: true });
+})();
+
