@@ -98,15 +98,21 @@ pre{
 .LinkButton:hover{ filter:brightness(1.05); transform:translateY(-1px); transition:.15s ease; }
 
 /* ============ COLLAGE GALLERY ============ */
-.CollageImages{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:16px; padding:10px; max-width:100%; box-sizing:border-box;
+.CollageImages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* always 2 columns */
+  grid-auto-rows: auto;                  /* as many rows as needed */
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
 }
 /* uniform tiles, no layout shifts */
-.CollageImages img{
-  width:100%; height:auto; aspect-ratio:16/9;
-  object-fit:cover; /* swap to 'contain' if you hate cropping */
-  background:var(--oil-black); border-radius:12px; box-shadow:var(--box-shadow);
+.CollageImages img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 /* hover effect ONLY on devices that actually hover */
 @media (hover:hover) and (pointer:fine){
@@ -114,6 +120,9 @@ pre{
     transform:scale(1.5); /* replaces width change to avoid reflow */
     max-height:500px; z-index:100; position:relative;
     border:2px solid var(--copper); border-radius:8px; box-shadow:0 0 8px var(--copper); box-sizing:border-box;
+    transform: scale(1.5) translateY(-4px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
   }
 }
 
