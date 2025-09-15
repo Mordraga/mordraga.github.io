@@ -17,8 +17,9 @@
     <a href="/Projects/projects.html">Projects</a>
   </nav>
   <div class="ContentBoxes">
-    <h1 class="AccessText">🦎 TagSpeak — Packet Speak DSL</h1>
-    <p><strong>Version:</strong> v1.x (active)</p>
+    <h1 class="AccessText">TagSpeak — Packet Speak DSL</h1>
+    <img src="/Projects/Tagspeak/Tagspeak-9.png"> 
+    <p><strong>Version:</strong> v1.0.x (active)</p>
     <p><strong>Tagline:</strong> A tiny packet-based language for human ↔ AI workflows. Calm by design.</p>
   </div>
 </header>
@@ -28,7 +29,7 @@
 <section class="ContentBoxes">
   <h2>What is TagSpeak?</h2>
   <p><strong>TagSpeak</strong> is a symbolic, <em>dataflow-oriented</em> DSL where <strong>everything is a packet</strong> of the form <code>[op@arg]</code>. Packets chain left → right with <code>&gt;</code>, values flow through, and blocks group work with <code>{ ... }</code>.</p>
-  <ul>
+  <ul class="ContentBoxes">
     <li><strong>Everything is a packet</strong> → <code>[op@arg]</code></li>
     <li><strong>Packets chain</strong> with <code>&gt;</code> → <code>[math@2+2] &gt; [store@x] &gt; [print@x]</code></li>
     <li><strong>Blocks</strong> use <code>{ ... }</code> to group sequences</li>
@@ -39,27 +40,30 @@
 
     
 <section class="ContentBoxes">
-  <h2>Quickstart</h2>
-  <h3>Hello, TagSpeak</h3>
-  <pre><code class="language-tgsk">[print@&quot;Hello, TagSpeak!&quot;]</code></pre>
-  <h3>Counters &amp; Loops</h3>
-  <pre><code class="language-tgsk"># comments are fine
-[note@&quot;Init counter&quot;]
-[math@0] &gt; [store@counter] &gt; [print@counter]
+  <h2>Quickstart Syntax</h2>
+  <main class="ContentBoxes">
+    <p>Tagspeak is Data flow first. From action to data.</p>
+    <pre><code class="language-tgsk">[print@&quot;Hello, TagSpeak!&quot;]</code></pre>
 
-[note@&quot;Inline loop&quot;]
-[loop@3]{ [math@counter+1] &gt; [store@counter] &gt; [print@counter] }
-
-[note@&quot;Tag loop&quot;]
-[funct:step]{ [math@counter+1] &gt; [store@counter] &gt; [print@counter] }
-[math@0] &gt; [store@counter] &gt; [print@counter]
-[loop3@step]</code></pre>
+    <p>Example Tagspeak code</p>
+    <pre><code>
+      [note@ Define count and print initial]<br>
+      [int@0]&gt[store@count]&gt[print@count]<br>
+      <br>
+      [note@ Define function called count5]<br>
+      <br>
+      [funct:count5]{<br>
+        [math@count+1]&gt[store@count]&gt[print@count]<br>
+        <br>
+      }[loop:count5@6]
+    </code></pre>
+    <p>Expected outcome: 0-5 printed to a console</p>
 </section>
 
     
 <section class="ContentBoxes">
   <h2>Safety, Consent &amp; Sandbox</h2>
-  <ul>
+  <ul class="ContentBoxes">
     <li><strong>Red Box (project boundary):</strong> put a <code>red.tgsk</code> at repo root. All <code>[load]</code>, <code>[save]</code>, <code>[log]</code>, <code>[cd]</code> are sandboxed to this root; missing root ⇒ <code>E_BOX_REQUIRED</code>.</li>
     <li><strong>Yellow / Confirm:</strong> gate side-effects. <code>[yellow@"why"]{ [exec@"cmd"] }</code> prompts once (or respect env/TOML allowlists).</li>
     <li><strong>Red Mode:</strong> opt-in, ritual acknowledgment; unlocks red-only packets (e.g., <code>[repl]</code>). Red never bypasses Yellow.</li>
@@ -70,20 +74,25 @@
     
 <section class="ContentBoxes">
   <h2>Packet Reference (Canonical)</h2>
-  <p>Canonical packets shipped with TagSpeak, grouped by domain. Sugar forms (like <code>==</code>) have explicit packet equivalents (like <code>[eq]</code>).</p>
-  
+  <main class="ContentBoxes">
+      <p>Canonical packets shipped with TagSpeak, grouped by domain. Sugar forms (like <code>==</code>) have explicit packet equivalents (like <code>[eq]</code>).</p>
+      <p>Canonical max form: <code>[packet:label(conditional/argument)@value]</code></p>
+      <p>Everything sugars down from there.</p>
+  </main>
 </section>
 
     
 <section class="ContentBoxes">
   <h2>Contributing New Packets</h2>
-  <p>Keep the grammar small and behavior composable. Prefer sugar layered over canonical forms. Safety gates are opt‑in and explicit.</p>
+  <main class="ContentBoxes">
+    <p>Keep the grammar small and behavior composable. Prefer sugar layered over canonical forms. Safety gates are opt‑in and explicit.</p>
   <ul>
     <li>Avoid duplicates; verify in <code>docs/PACKETS.json</code> via <code>[reflect(packets_full)]</code>.</li>
     <li>Specify inputs/outputs and side‑effects; pass a value through unless explicitly a sink.</li>
     <li>Gate file/exec/network via <code>red.tgsk</code>, <code>[yellow]</code>, and <code>.tagspeak.toml</code>.</li>
     <li>Document a canonical example and any sugar.</li>
   </ul>
+  </main>
   <a class="LinkButton" href="https://github.com/Mordraga/tagspeak_rs" target="_blank">Repo for Tagspeak</a>
 </section>
 
